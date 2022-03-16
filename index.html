@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bootstrap</title>
+    <link rel="stylesheet" href="style.css">
+    <!--FONT AWESOME  START HERE-->
+    <script
+      src="https://kit.fontawesome.com/5f4137cada.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--LINK CSS START HERE-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+
+
+
+    <section>
+      <div class="filter-heading">
+        <h2>portfolio gallery</h2>
+      </div>
+      <ul>
+        <li class="list" data-filter="all">all</li>
+        <li class="list" data-filter="nature">nature</li>
+        <li class="list" data-filter="camera">camera</li>
+        <li class="list" data-filter="tech">tech</li>
+      </ul>
+
+      <div class="product">
+        <div class="single-box tech"><img class="img-fluid" src="img/tech1.jpg" alt="image"></div>
+        <div class="single-box camera nature"><img class="img-fluid" src="img/animal3.jpg" alt="image"></div>
+        <div class="single-box watch nature "><img class="img-fluid" src="img/bird1.jpg" alt="image"></div>
+        <div class="single-box nature watch"><img class="img-fluid" src="img/bird2.jpg" alt="image"></div>
+        <div class="single-box watch nature"><img class="img-fluid" src="img/head1.jpg" alt="image"></div>
+        <div class="single-box camera tech"><img class="img-fluid" src="img/head2.jpg" alt="image"></div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <!--JS SECTION START HERE-->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.list').click(function(){
+          const value = $(this).attr('data-filter');  
+          if(value == 'all'){
+            $('.single-box').show('1000')
+          }
+          else{
+            $('.single-box').not('.'+value).hide('1000');
+            $('.single-box').filter('.'+value).show('1000');
+          }
+        })
+      })
+    </script>
+
+    
+  </body>
+</html>
